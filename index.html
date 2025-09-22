@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>色彩感覚ゲーム - あなたの色彩感覚は上位何％？</title>
+    
+    <!-- OGPタグ -->
+    <meta property="og:title" content="色彩感覚ゲーム - あなたの色彩感覚テスト">
+    <meta property="og:description" content="あなたの色彩感覚は上位何%？20ステージ×7問のテストでチェック！">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://YOUR_DOMAIN/og-image.png">
+    <meta property="og:url" content="https://YOUR_DOMAIN/">
+    
+    <!-- Twitterカード -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="色彩感覚ゲーム">
+    <meta name="twitter:description" content="あなたの色彩感覚は上位何%？20ステージに挑戦！">
+    <meta name="twitter:image" content="https://YOUR_DOMAIN/og-image.png">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="色彩感覚ゲーム">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="stage-data.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- ステージ選択画面 -->
+        <div id="stageSelectScreen" class="screen active">
+            <div class="container">
+                <h1 class="title">色彩感覚ゲーム</h1>
+                <p class="subtitle">ステージを選択してください</p>
+                
+                <div class="stage-grid" id="stageGrid">
+                    <!-- ステージボタンがJSで生成されます -->
+                </div>
+                
+                <div class="stage-info">
+                    <p>各ステージは7問のテストです</p>
+                    <p>同じステージは何度でも挑戦できます</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ゲーム画面 -->
+        <div id="gameScreen" class="screen">
+            <div class="game-header">
+                <button class="quit-btn" onclick="quitGame()">やめる</button>
+                <div class="stage-indicator">
+                    <span class="stage-label">STAGE <span id="currentStage">1</span></span>
+                </div>
+                <div class="question-count">
+                    <span class="question-label">Q</span>
+                    <span class="question-number" id="currentQuestion">1</span>
+                    <span class="question-separator">/</span>
+                    <span class="question-total">7</span>
+                </div>
+            </div>
+            
+            <div class="game-instruction">違う色のタイルを選んでください</div>
+            
+            <div class="tiles-container" id="tilesContainer">
+                <!-- タイルがJSで動的に生成されます -->
+            </div>
+            
+            <div class="answer-result" id="answerResult">
+                <div class="result-symbol" id="resultSymbol"></div>
+            </div>
+            
+            <div class="progress-dots" id="progressDots">
+                <!-- 進捗ドットがJSで動的に生成されます -->
+            </div>
+        </div>
+
+        <!-- 結果画面 -->
+        <div id="resultScreen" class="screen">
+            <div class="container">
+                <h2 class="result-title">診断結果</h2>
+                <div class="result-score">
+                    <span id="correctCount">0</span>/7問正解
+                </div>
+                <div class="result-rank" id="resultRank"></div>
+                <div class="result-percentage">
+                    あなたは上位<span id="topPercentage">-</span>%の色彩感覚の持ち主です
+                </div>
+                <div class="result-message" id="resultMessage"></div>
+                
+                <div class="result-distribution" id="resultDistribution">
+                    <!-- 分布グラフがJSで生成されます -->
+                </div>
+                
+                <div class="result-details" id="resultDetails">
+                    <!-- 詳細結果がJSで生成されます -->
+                </div>
+                
+                <div class="share-section">
+                    <button class="share-btn" onclick="shareResult()">結果をシェア</button>
+                    <button class="retry-btn" onclick="retryStage()">もう一度挑戦</button>
+                    <button class="back-btn" onclick="backToStageSelect()">ステージ選択に戻る</button>
+                </div>
+                
+                <div class="cta-section">
+                    <div class="cta-header">
+                        <div class="cta-badge">無料プレゼント！</div>
+                        <h3 class="cta-title">在宅デザイン副業で<br><span class="cta-highlight">理想を叶えるための無料プレゼント</span></h3>
+                    </div>
+                    <img src="cta-image.jpg" alt="AI時代に取り残されないデザイナー戦略" class="cta-image" onerror="this.style.display='none'">
+                    <div class="cta-benefits">
+                        <div class="benefit-highlight">
+                            <span class="benefit-icon">✨</span>
+                            <span class="benefit-text">累計2000名以上が受け取った<br>超有益プレゼント</span>
+                        </div>
+                    </div>
+                    <button class="cta-btn" onclick="downloadGuide()">
+                        <span class="cta-btn-text">今すぐ無料で受け取る</span>
+                        <span class="cta-btn-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
