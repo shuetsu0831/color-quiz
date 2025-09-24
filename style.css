@@ -218,12 +218,12 @@ body {
 }
 
 .tile.correct::after {
-    content: '笨�';
+    content: '笳�';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;
+    font-size: 3rem;
     color: white;
     font-weight: bold;
     animation: fadeIn 0.3s ease;
@@ -241,8 +241,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;
-    color: var(--error);
+    font-size: 3rem;
+    color: white;
     font-weight: bold;
     animation: fadeIn 0.3s ease;
 }
