@@ -172,24 +172,26 @@ body {
 }
 
 .tiles-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    max-width: 360px;
+    display: flex;
+    gap: 0.5rem;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .tile {
-    aspect-ratio: 1;
+    width: 70px;
+    height: 70px;
     border: none;
-    border-radius: 20px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tile {
